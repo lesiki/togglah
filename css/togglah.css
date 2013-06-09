@@ -1,3 +1,27 @@
 * {
   box-sizing: border-box;
 }
+span.togglah_option {
+  display: inline-block;
+  background-color: #ccc;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 40pt;
+}
+span.togglah_option.option_0 {
+  background-color: #ff9955;
+  color: #bb4b00;
+}
+span.togglah_option.option_1 {
+  background-color: #be2625;
+  color: #ea9392;
+}
+div.togglah_wrap {
+  overflow: hidden;
+  border: 3px solid black;
+  white-space: nowrap;
+}

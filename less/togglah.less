@@ -1,1 +1,29 @@
 * { box-sizing: border-box; }
+@peach:#FF9955;
+@strawberry:#BE2625;
+span.togglah_option {
+	display:inline-block;
+	background-color:#ccc;
+	text-align:center;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	font-size:40pt;
+	&.option_0 {
+		background-color:@peach;
+		color:darken(@peach, 30%);
+	}
+	&.option_1 {
+
+		background-color:@strawberry;
+		color:lighten(@strawberry, 30%);
+	}
+}
+div.togglah_wrap {
+	overflow:hidden;
+	border:3px solid black;
+	white-space: nowrap;
+	
+}
