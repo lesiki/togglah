@@ -20,6 +20,13 @@ span.togglah_option.option_1 {
   background-color: #be2625;
   color: #ea9392;
 }
+.notransition > * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
 div.togglah_wrap {
   overflow: hidden;
   border: 3px solid black;

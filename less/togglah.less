@@ -21,9 +21,15 @@ span.togglah_option {
 		color:lighten(@strawberry, 30%);
 	}
 }
+.notransition > *{
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
 div.togglah_wrap {
 	overflow:hidden;
 	border:3px solid black;
 	white-space: nowrap;
-	
 }

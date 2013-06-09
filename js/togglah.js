@@ -17,7 +17,7 @@ var togglah = function() {
 			options[index].text = $(radioButton).attr('alt');
 			options[index].selected = $(radioButton).is(':checked');
 		});
-		togglahElement = "<div class='togglah_wrap'>";
+		togglahElement = "<div class='togglah_wrap notransition'>";
 		$.each(options, function(index, option) {
 			togglahElement += "<span class='togglah_option option_" +index +"' togglah_id='" + option.togglah_id + "'>" +  option.text + "</span>";
 		});
@@ -26,7 +26,8 @@ var togglah = function() {
 		togglahWidth = max($(".togglah_option"), true) * 1.3;
 		togglahHeight = max($(".togglah_option"), false);
 		$(".togglah_option").width(togglahWidth).height(togglahHeight);
-		$(".togglah_wrap").width(togglahWidth * 1.1).height(togglahHeight).click(toggle);
+		$(".togglah_wrap").width(togglahWidth * 1.1).height(togglahHeight).click(toggle).removeClass('notransition');
+
 	},
 	toggle = function() {
 		var firstOption = $(this).find('.togglah_option.option_0');
@@ -37,7 +38,7 @@ var togglah = function() {
 		}
 		else {
 			// switch on
-			firstOption.css('margin-left', '-' + firstOption.width() * (1 / 1.1));
+			firstOption.css('margin-left', '-' + firstOption.width() * 0.9);
 			firstOption.attr('on', 'on');
 		}
 	},
