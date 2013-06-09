@@ -19,28 +19,47 @@ var togglah = function() {
 		});
 		togglahElement = "<div class='togglah_wrap notransition'>";
 		$.each(options, function(index, option) {
-			togglahElement += "<span class='togglah_option option_" +index +"' togglah_id='" + option.togglah_id + "'>" +  option.text + "</span>";
+			togglahElement += "<span class='togglah_option option_" +index +"' togglah_id='" + option.togglah_id + "'";
+			if (option.selected) {
+				togglahElement += " on='on' "
+			}
+			togglahElement+= ">" +  option.text + "</span>";
 		});
 		togglahElement += "</div>";
 		$(radioButtonSelector).last().after(togglahElement);
 		togglahWidth = max($(".togglah_option"), true) * 1.3;
 		togglahHeight = max($(".togglah_option"), false);
 		$(".togglah_option").width(togglahWidth).height(togglahHeight);
+		radioButtonSelector.hide();
+		updateMargins($(".togglah_wrap"));
 		$(".togglah_wrap").width(togglahWidth * 1.1).height(togglahHeight).click(toggle).removeClass('notransition');
-
 	},
-	toggle = function() {
-		var firstOption = $(this).find('.togglah_option.option_0');
-		if(typeof firstOption.attr('on') !== 'undefined') {
-			// switch off
-			firstOption.css('margin-left', 0);
-			firstOption.removeAttr('on');
+	updateMargins = function(togglah) {
+		var options = $(togglah).find('.togglah_option');
+		if (typeof options.first().attr('on') !== 'undefined') {
+			options.first().css('margin-left', 0);
 		}
 		else {
-			// switch on
-			firstOption.css('margin-left', '-' + firstOption.width() * 0.9);
-			firstOption.attr('on', 'on');
+			options.first().css('margin-left', '-' + options.first().width() * 0.9);
 		}
+	}
+	toggle = function(togglah, changeRadios) {
+		var options = $(this).find('.togglah_option');
+		if(typeof options.first().attr('on') !== 'undefined') {
+			options.first().removeAttr('on');
+			options.last().attr('on', 'on');
+		}
+		else {
+			options.first().attr('on', 'on');
+			options.last().removeAttr('on');
+		}
+		updateMargins($(this));
+		if (typeof changeRadios === 'undefined' || changeRadios)
+			updateRadios($(this));
+	},
+	updateRadios = function(togglah) {
+		var selectedTogglahId = togglah.find('.togglah_option[on=on]').attr('togglah_id');
+		$("input[togglah_id=" + selectedTogglahId + "]").attr('checked', 'checked');
 	},
 	max = function(selector, useWidth) {
 		var max = null;
@@ -64,6 +83,6 @@ var togglah = function() {
 			return max.height()
 	};
 	return {
-		init: initialize
+		init: initialize,
 	};
 }();

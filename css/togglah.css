@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+body {
+  text-align: center;
+  font-size: 40pt;
+}
 span.togglah_option {
   display: inline-block;
   background-color: #ccc;
@@ -10,7 +14,6 @@ span.togglah_option {
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  font-size: 40pt;
 }
 span.togglah_option.option_0 {
   background-color: #ff9955;
@@ -29,6 +32,6 @@ span.togglah_option.option_1 {
 }
 div.togglah_wrap {
   overflow: hidden;
-  border: 3px solid black;
   white-space: nowrap;
+  display: inline-block;
 }
