@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script type="text/javascript" src="js/jquery.1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/togglah.js"></script>
+		<link rel="stylesheet" href="css/togglah.css" />
+		<script type="text/javascript">
+			$(function() {
+				togglah.init('tog');
+				$('input[name=inout]').change(function() {
+					$('body').removeClass('p').removeClass('s').addClass($('input[name=inout]:checked').val());
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="title">togglah.js</div>
+		<span id="description">a simple jquery-based slider</span>
+		I think
+		<input alt="Peaches" type="radio" class="tog" name="inout" value="p" />
+		<input alt="Strawberries" type="radio" class="tog" name="inout" value="s" checked/>
+		are my favourite fruit
+		<a href="https://github.com/lesiki/togglah"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+	</body>
+</html>
