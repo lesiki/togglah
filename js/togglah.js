@@ -54,12 +54,15 @@ var togglah = function() {
 			options.last().removeAttr('on');
 		}
 		updateMargins($(this));
-		if (typeof changeRadios === 'undefined' || changeRadios)
+		if (typeof changeRadios === 'undefined' || changeRadios) {
 			updateRadios($(this));
+		}
 	},
 	updateRadios = function(togglah) {
-		var selectedTogglahId = togglah.find('.togglah_option[on=on]').attr('togglah_id');
+		var selectedTogglahId = togglah.find('.togglah_option[on=on]').attr('togglah_id'),
+		unselectedTogglahId = togglah.find('.togglah_option:not([on=on])').attr('togglah_id');
 		$("input[togglah_id=" + selectedTogglahId + "]").attr('checked', 'checked');
+		$("input[togglah_id=" + unselectedTogglahId + "]").removeAttr('checked').change();
 	},
 	max = function(selector, useWidth) {
 		var max = null;

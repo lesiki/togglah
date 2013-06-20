@@ -4,8 +4,44 @@
 body {
   text-align: center;
   font-size: 40pt;
+  color: #ccc;
+  background-color: #aaa;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+body.p {
+  background-color: #ffd6bb;
+  color: #ff7a22;
+}
+body.s {
+  background-color: #f2bdbd;
+  color: #931d1d;
+}
+#title {
+  margin: 5% auto 0 auto;
+  font-size: 1.4em;
+}
+#description {
+  font-size: 0.4em;
+  display: block;
+  margin: 0 auto 5% auto;
 }
 span.togglah_option {
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+
+  -ms-user-select: none;
+  /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+
+  -o-user-select: none;
+  user-select: none;
   display: inline-block;
   background-color: #ccc;
   text-align: center;
@@ -31,6 +67,7 @@ span.togglah_option.option_1 {
   transition: none !important;
 }
 div.togglah_wrap {
+  cursor: hand;
   overflow: hidden;
   white-space: nowrap;
   display: inline-block;

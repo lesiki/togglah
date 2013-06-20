@@ -6,13 +6,18 @@
 		<script type="text/javascript">
 			$(function() {
 				togglah.init('tog');
+				$('input[name=inout]').change(function() {
+					$('body').removeClass('p').removeClass('s').addClass($('input[name=inout]:checked').val());
+				});
 			});
 		</script>
 	</head>
 	<body>
+		<div id="title">togglah.js</div>
+		<span id="description">a simple jquery-based slider</span>
 		I think
-		<input alt="Peaches" type="radio" class="tog" name="inout" value="gave" />
-		<input alt="Strawberries" type="radio" class="tog" name="inout" value="got" checked/>
+		<input alt="Peaches" type="radio" class="tog" name="inout" value="p" />
+		<input alt="Strawberries" type="radio" class="tog" name="inout" value="s" checked/>
 		are my favourite fruit
 	</body>
 </html>
