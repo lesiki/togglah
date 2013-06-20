@@ -4,8 +4,8 @@
 body {
   text-align: center;
   font-size: 40pt;
-  color: #ccc;
-  background-color: #aaa;
+  color: #444;
+  background-color: #222;
   -webkit-transition: all 0.8s ease;
   -moz-transition: all 0.8s ease;
   -ms-transition: all 0.8s ease;
